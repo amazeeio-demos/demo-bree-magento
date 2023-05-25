@@ -7,7 +7,7 @@ version: "2.3"
 x-volumes:
   &default-volumes # Define all volumes you would like to have real-time mounted into the docker containers
   volumes:
-    - .:/app:delegated ### Local overrides to mount host filesystem. Automatically removed in CI and PROD.
+    - storage:/storage:delegated ### Local overrides to mount host filesystem. Automatically removed in CI and PROD.
     - media:/app/pub/media:delegated
 
 x-environment:
@@ -24,6 +24,7 @@ x-user:
 
 volumes:
   media: {}
+  storage: {}
 
 services:
   cli: # cli container, will be used for executing composer and any local commands (drush, drupal, etc.)
