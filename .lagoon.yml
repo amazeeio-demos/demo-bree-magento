@@ -1,12 +1,12 @@
 docker-compose-yaml: docker-compose.yml
 
-project: riskbooks
+project: magento2
 
 tasks:
   post-rollout:
     - run:
         name: Create base folders
-        command: /app/utils/base_folders.sh
+        command: /app/lagoon/create_base_folders.sh
         service: cli
     - run:
         name: Magento Upgrade
@@ -36,7 +36,6 @@ tasks:
         name: Magento Disable Maintenance
         command: php -d memory_limit=-1 /app/bin/magento maintenance:disable
         service: cli
-
 #environments:
 #  develop:
 #   routes:
