@@ -1,3 +1,5 @@
+#!/bin/sh
+
 mkdir -p -v -m775 /storage/media/attribute
 mkdir -p -v -m775 /storage/media/analytics
 mkdir -p -v -m775 /storage/media/catalog
@@ -17,3 +19,5 @@ mkdir -p -v -m775 /storage/media/sitemap
 mkdir -p -v -m775 /storage/media/generated
 mkdir -p -v -m775 /storage/media/var
 mkdir -p -v -m775 /storage/media/static
+
+cp -u /repo/app/etc/* /storage/etc
