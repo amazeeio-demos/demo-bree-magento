@@ -19,5 +19,6 @@ mkdir -p -v -m775 /storage/media/sitemap
 mkdir -p -v -m775 /storage/media/generated
 mkdir -p -v -m775 /storage/media/var
 mkdir -p -v -m775 /storage/media/static
+mkdir -p -v -m775 /storage/etc
 
 cp -u /repo/app/etc/* /storage/etc
