@@ -37,6 +37,7 @@ RUN rm -rf /app/var && \
 RUN ln -s /storage/generated /app/generated && \
     ln -s /storage/var /app/var && \
     ln -s /storage/static /app/pub/static && \
+    ln -s /storage/media /app/pub/media && \
     ln -s /storage/etc /app/app/etc
 
 ENV WEBROOT=pub
