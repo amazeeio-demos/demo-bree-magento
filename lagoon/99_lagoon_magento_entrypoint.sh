@@ -1,5 +1,10 @@
 #!/bin/sh
 
+mkdir -p -v -m775 /app/app/etc/storage/generated
+mkdir -p -v -m775 /app/app/etc/storage/var
+mkdir -p -v -m775 /app/app/etc/storage/static
+mkdir -p -v -m775 /app/app/etc/storage/media
+
 mkdir -p -v -m775 /app/pub/media/attribute
 mkdir -p -v -m775 /app/pub/media/analytics
 mkdir -p -v -m775 /app/pub/media/catalog
