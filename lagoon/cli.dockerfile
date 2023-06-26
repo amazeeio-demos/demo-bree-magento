@@ -22,7 +22,7 @@ RUN mkdir -p -v -m775 /storage/generated && \
     mkdir -p -v -m775 /storage/var && \
     mkdir -p -v -m775 /storage/static && \
     mkdir -p -v -m775 /storage/media && \
-    mkdir -p -v -m775 /storage/etc /repo/app/etc/
+    mkdir -p -v -m775 /storage/etc /repo/app/etc
 
 # Here we copy across any of the app/etc files that come in
 # into their own special directory
