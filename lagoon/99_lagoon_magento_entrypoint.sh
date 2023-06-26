@@ -16,9 +16,4 @@ mkdir -p -v -m775 /app/pub/media/tmp
 mkdir -p -v -m775 /app/pub/media/pdf
 mkdir -p -v -m775 /app/pub/media/captcha
 mkdir -p -v -m775 /app/pub/media/sitemap
-# mkdir -p -v -m775 /app/pub/media/generated
-# mkdir -p -v -m775 /app/pub/media/var
-# mkdir -p -v -m775 /app/pub/media/static
-# mkdir -p -v -m775 /storage/etc
 
-cp -u /repo/app/etc/* /storage/etc

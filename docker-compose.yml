@@ -7,8 +7,9 @@ version: "2.3"
 x-volumes:
   &default-volumes # Define all volumes you would like to have real-time mounted into the docker containers
   volumes:
-    - storage:/storage:delegated ### Local overrides to mount host filesystem. Automatically removed in CI and PROD.
+    - storage:/app/app/etc/storage:delegated ### Local overrides to mount host filesystem. Automatically removed in CI and PROD.
     - media:/app/pub/media:delegated
+
 
 x-environment:
   &default-environment # Route that should be used locally, if you are using pygmy, this route *must* end with .docker.amazee.io
@@ -39,7 +40,7 @@ services:
       lagoon.persistent: /storage # location where the persistent storage should be mounted
     <<: *default-volumes # loads the defined volumes from the top
     #    <<: *default-user # uses the defined user from top
-    user: root
+    user: "root"
     volumes_from: ### mount the ssh-agent from the pygmy or cachalot ssh-agent. Automatically removed in CI.
       - container:amazeeio-ssh-agent ### Local overrides to mount host SSH keys. Automatically removed in CI.
     environment:
