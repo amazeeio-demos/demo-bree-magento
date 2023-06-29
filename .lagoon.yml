@@ -5,37 +5,33 @@ project: magento2
 tasks:
   post-rollout:
     - run:
-        name: Create base folders
-        command: /app/lagoon/create_base_folders.sh
+        name: Magento Upgrade
+        command: php -d memory_limit=-1 /app/bin/magento setup:upgrade
         service: cli
-    # - run:
-    #     name: Magento Upgrade
-    #     command: php -d memory_limit=-1 /app/bin/magento setup:upgrade
-    #     service: cli
-    # - run:
-    #     name: Magento Compile
-    #     command: php -d memory_limit=-1 /app/bin/magento setup:di:compile
-    #     service: cli
-    # - run:
-    #     name: Magento Static Content
-    #     command: php -d memory_limit=-1 /app/bin/magento setup:static-content:deploy -f en_GB
-    #     service: cli
-    # - run:
-    #     name: Magento Cache Clean
-    #     command: php -d memory_limit=-1 /app/bin/magento cache:clean
-    #     service: cli
-    # - run:
-    #     name: Magento Cache Flush
-    #     command: php -d memory_limit=-1 /app/bin/magento cache:flush
-    #     service: cli
-    # - run:
-    #     name: Magento Indexer
-    #     command: php -d memory_limit=-1 /app/bin/magento indexer:reindex
-    #     service: cli
-    # - run:
-    #     name: Magento Disable Maintenance
-    #     command: php -d memory_limit=-1 /app/bin/magento maintenance:disable
-    #     service: cli
+    - run:
+        name: Magento Compile
+        command: php -d memory_limit=-1 /app/bin/magento setup:di:compile
+        service: cli
+    - run:
+        name: Magento Static Content
+        command: php -d memory_limit=-1 /app/bin/magento setup:static-content:deploy || true
+        service: cli
+    - run:
+        name: Magento Cache Clean
+        command: php -d memory_limit=-1 /app/bin/magento cache:clean
+        service: cli
+    - run:
+        name: Magento Cache Flush
+        command: php -d memory_limit=-1 /app/bin/magento cache:flush
+        service: cli
+    - run:
+        name: Magento Indexer
+        command: php -d memory_limit=-1 /app/bin/magento indexer:reindex
+        service: cli
+    - run:
+        name: Magento Disable Maintenance
+        command: php -d memory_limit=-1 /app/bin/magento maintenance:disable
+        service: cli
 #environments:
 #  develop:
 #   routes:

@@ -1,5 +1,19 @@
 #!/bin/sh
 
+# in order to fix permissions on /app/app/etc/lagoon-rootless-migration-complete
+# if it exists and it's not writeable, we need to recreate it so that it _is_ writeable
+# this'll let us actually install Magento (given that we're taking over the app/etc directory)
+
+lrmcf="/app/app/etc/lagoon-rootless-migration-complete"
+
+if [ -e "$lrmcf" ] && [ ! -w "$lrmcf" ]; then
+  rm -f "$lrmcf"
+  touch "$lrmcf"
+  chmod +w "$lrmcf"
+fi
+
+
+
 mkdir -p -v -m775 /app/app/etc/storage/generated
 mkdir -p -v -m775 /app/app/etc/storage/var
 mkdir -p -v -m775 /app/app/etc/storage/static
