@@ -19,7 +19,7 @@ When we build the image from your source code, we're currently copying the conte
 
 Once you have set up your project on Lagoon (or locally) you will want to run an installation
 
-If you're installing on Lagoon, you'll want to ssh into your environment and copy the basic files into `/app/app/etc`
+If you're installing on Lagoon, you'll want to ssh into your target environment and copy the basic files into `/app/app/etc`
 
 `cp /repo/app/etc/* /app/app/etc/`
 
