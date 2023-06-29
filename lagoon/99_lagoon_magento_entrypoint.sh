@@ -4,7 +4,7 @@
 # if it exists and it's not writeable, we need to recreate it so that it _is_ writeable
 # this'll let us actually install Magento (given that we're taking over the app/etc directory)
 
-lrmcf="/app/app/etc/lagoon-rootless-migration-complete"
+lrmcf="/app/app/etc/.lagoon-rootless-migration-complete"
 
 if [ -e "$lrmcf" ] && [ ! -w "$lrmcf" ]; then
   rm -f "$lrmcf"

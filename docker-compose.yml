@@ -7,8 +7,9 @@ version: "2.3"
 x-volumes:
   &default-volumes # Define all volumes you would like to have real-time mounted into the docker containers
   volumes:
-    - storage:/app/app/etc/storage:delegated ### Local overrides to mount host filesystem. Automatically removed in CI and PROD.
-    - media:/app/pub/media:delegated
+    # - storage:/app/app/etc/storage:delegated ### Local overrides to mount host filesystem. Automatically removed in CI and PROD.
+    # - media:/app/pub/media:delegated
+    - .:/app:delegated
 
 
 x-environment:
