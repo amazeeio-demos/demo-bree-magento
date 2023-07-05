@@ -2,7 +2,7 @@ version: "2.3"
 
 #x-lagoon-project:
 #  # Lagoon project name (leave `&lagoon-project` when you edit this)
-#  &lagoon-project magento
+#  &lagoon-project demo-bree-magento
 
 x-volumes:
   &default-volumes # Define all volumes you would like to have real-time mounted into the docker containers
@@ -14,7 +14,7 @@ x-volumes:
 
 x-environment:
   &default-environment # Route that should be used locally, if you are using pygmy, this route *must* end with .docker.amazee.io
-  LAGOON_ROUTE: &default-url http://magento.docker.amazee.io
+  LAGOON_ROUTE: &default-url http://demo-bree-magento.docker.amazee.io
   # Uncomment if you like to have the system behave like in production
   #LAGOON_ENVIRONMENT_TYPE: production
   # Uncomment to enable xdebug and then restart via `docker-compose up -d`
@@ -33,7 +33,7 @@ services:
     build:
       context: .
       dockerfile: lagoon/cli.dockerfile
-    image: &cli-image magento-cli # this image will be reused as `CLI_IMAGE` in subsequent Docker builds
+    image: &cli-image demo-bree-magento-cli # this image will be reused as `CLI_IMAGE` in subsequent Docker builds
     labels:
       # Lagoon Labels
       lagoon.type: cli-persistent

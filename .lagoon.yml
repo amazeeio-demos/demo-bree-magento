@@ -1,6 +1,6 @@
 docker-compose-yaml: docker-compose.yml
 
-project: magento2
+project: demo-bree-magento
 
 tasks:
   post-rollout:
